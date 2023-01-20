@@ -1,0 +1,95 @@
+@font-face {
+  	font-family: "Metropolis";
+  	src: url("fonts/Metropolis-Light.ttf") format("truetype"),
+    	url("fonts/Metropolis-Light.woff") format("woff");
+  	font-weight: normal;
+}
+
+@font-face {
+  	font-family: "Metropolis";
+  	src: url("fonts/Metropolis-Medium.ttf") format("truetype"),
+    	url("fonts/Metropolis-Medium.woff") format("woff");
+  	font-weight: bold;
+}
+:root{
+	--font-play: Playfair Display, serif,-apple-system;
+	--font-metro: Metropolis,Arial,sans-serif,-apple-system;
+
+	--color-black: #212529;
+	--color-white: #fff;
+
+	--shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+body{ 
+	font-family: var(--font-metro);
+	font-size: 1.2rem;
+	line-height: 26px;
+	color: var(--color-black);
+}
+
+h1, h2, h3, h4, h5, h6{ font-family: var(--font-play); font-weight:bold; }
+
+a{ text-decoration: none; }
+a.button{ font-size: 1.1rem; font-weight: 700; letter-spacing: 1px; padding: 10px 50px; border: 2px solid var(--color-black); color: #fff; background: var(--color-black); transition: all .3s ease; display: inline-block; }
+a.button:hover{ background: transparent; color: var(--color-black); }
+
+ul { margin-bottom:  20px; }
+ul li + li { margin-top: 20px; }
+header{ min-height: 75px; }
+
+section { padding: 80px 0; }
+.logo-boxed{ max-width: 300px; margin:0 auto 30px; }
+.social{ margin: 0; padding: 0; list-style: none; display: flex; align-items:center; gap: 30px; grid-gap: 30px; margin-top: 40px; justify-content:center; flex-wrap:wrap; }
+.social li + li{ margin-top: 0; }
+.social img{ max-width: 200px }
+.social li:last-child svg{ width: 100px; }
+.review-source { width: 40px; margin-bottom: 20px; }
+.review-source.src-google{ color: #DB4437 }
+.review-source.src-facebook{ color: #3b5998  }
+.review-source.src-tiktok{ color: #000  }
+.testi{ font-style:italic; }
+.author { font-style:italic; }
+.author span{ font-weight:bold }
+.video-control { width: 100%; height: 0; padding-bottom: 56.25%; position: relative; overflow:hidden; }
+.video-control iframe{ position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit:cover; }
+.card-boxed { background: var(--color-white); border-radius: 8px; box-shadow: var(--shadow); padding: 16px; height: 100%; }
+.card-boxed .icon { margin-bottom: 20px;}
+.card-boxed .icon svg{ width: 40px; }
+.card-boxed h4{ text-transform: capitalize; font-weight:bold }
+.accordion .acc-item{ padding: 8px 16px; border:1px solid #d4d4d4; border-radius: 8px; }
+.accordion .acc-item + .acc-item{ margin-top: 20px;  }
+.accordion .accordion-title{ position: relative; cursor:pointer; font-weight:bold; font-size: 18px; }
+.accordion .accordion-title:after{ content: ''; width: 20px; height: 20px; position: absolute; right: 16px; top: 50%; transform:translateY(-50%); background-image: url("data:image/svg+xml,%3Csvg fill='none' stroke='%23212529' stroke-width='1.5' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' aria-hidden='true'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M19.5 5.25l-7.5 7.5-7.5-7.5m15 6l-7.5 7.5-7.5-7.5'%3E%3C/path%3E%3C/svg%3E"); background-repeat:no-repeat; background-position: center; transition: transform 0.4s linear }
+.accordion .active .accordion-title:after{ transform: translateY(-50%) rotate(180deg) }
+.accordion .accord-body{ padding-top: 16px; }
+
+
+/*/not my css*/
+.contact-form-wrap{width:100%;min-height:550px;margin:0 auto;max-width:1140px;border:1px solid #212529;padding:2rem}
+.contact-form{width:100%}
+.contact-form .label-text{display:block;font-weight:700;text-transform:uppercase;font-size:1.1rem;letter-spacing:1px;padding:10px 0}
+.contact-form input{padding:10px;background:transparent}
+.contact-form select{padding:10px;max-width:230px}
+.contact-form select:first-of-type{margin-right:5px}
+.contact-form button{font-size:1.1rem;font-weight:700;letter-spacing:1px;padding:10px 50px;border:2px solid #212529;color:#fff;background:#212529;transition:all .3s ease}
+.contact-form button:hover{background:transparent;color:#212529}
+.contact-form .checkbox-group .checkbox-label-text{padding:5px}
+.contact-form .checkbox-group label{margin:8px}
+.contact-form .checkbox-group label input{margin:3px}
+.contact-form .dropdown-group{display:flex;justify-content:center}
+.contact-form .dropdown-group .dropdown-wrap{margin:10px}
+.contact-form .dropdown-group .label-text{font-size:.8rem}
+@media screen and (max-width:500px) {
+	.contact-form .dropdown-group{flex-direction:column}
+}
+.contact-form .input-fullwidth{margin:15px 5px}
+.contact-form .input-fullwidth label{width:100%;font-weight:700}
+.contact-form .input-fullwidth input{width:100%;border:none;border-bottom:1px solid #000}
+.contact-form .general-info-group{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+@media screen and (max-width:510px) {
+	.contact-form .general-info-group{grid-template-columns:1fr}
+}
+.contact-form .paidSocial-group{display:flex;align-items:flex-end;justify-content:center}
+.contact-form .paidSocial-group .input-fullwidth{margin:10px}
+.contact-form .paidSocial-group .label-text,.contact-form .service-group .label-text{font-size:.8rem}
